@@ -1,1 +1,12 @@
-{}
+{
+    "env": {
+        "login_url": "https://www.thinkific.com/signin/",
+        "test_login_email": "xinluguo@gmail.com",
+        "test_login_password": "thinkific2021",
+        "base_url": "https://lulu-s-school-031a.thinkific.com",
+        "test_instructor_first_name": "Matthew",
+        "test_instructor_last_name": "Richardson",
+        "test_instructor_email": "mattrichardson+qatest@thinkific.com",
+        "test_instructor_title": "Senior Instructor"
+    }
+}
