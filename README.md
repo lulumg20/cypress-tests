@@ -1,2 +1,2 @@
 # cypress-tests
-Test scripts located in ```/integration```
+Test scripts located in ```cypress/integration```
