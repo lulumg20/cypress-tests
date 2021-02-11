@@ -15,7 +15,6 @@
       cy.url().should('include', '/manage')
   })
   
-
   describe('Navigate Instructors Page', () => {
 
     it('Correct page url', () => {
@@ -25,6 +24,7 @@
       
     })
   })
+
   describe('Add a New Instructor Page', () => {
     it('Created a new instructor', () => {
       cy.visit(Cypress.env('base_url') + '/manage/instructors/new')
@@ -50,14 +50,16 @@
     
     })
   })
+
   describe('Update Instructor Page', () => {
     it('Updated instructor', () => {
       cy.visit(Cypress.env('base_url') + '/manage/instructors')
       cy.url().should('include', '/manage/instructors')
-      cy.contains('Matthew')
-      cy.contains('Richardson')
-      cy.contains('mattrichardson+qatest@thinkific.com')
-      cy.contains('Senior Instructor')
+    
+      cy.contains(Cypress.env('test_instructor_first_name'))
+      cy.contains(Cypress.env('test_instructor_last_name'))
+      cy.contains(Cypress.env('test_instructor_email'))
+      cy.contains(Cypress.env('test_instructor_title'))
     })
   })
 
@@ -67,11 +69,11 @@
       cy.url().should('include', '/manage/instructors')
       //SEARCH FIELD
       cy.get('#q')
-        .type('Matthew')
-        .should('have.value', 'Matthew')
+        .type(Cypress.env('test_instructor_first_name'))
+        .should('have.value', Cypress.env('test_instructor_first_name'))
       //SEARCH BUTTON
       cy.get('#btn-search').click() 
-      cy.contains('Matthew')
+      cy.contains(Cypress.env('test_instructor_first_name'))
     })
   })
 
